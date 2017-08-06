@@ -8,8 +8,8 @@ See also: http://sourceforge.net/projects/xournal
 
 # Change on this branch
 
-I find accelerators to be very hard to use/reach on the keyboard so I did a few
-changes.
+I find the default accelerators to be very hard to use/reach on the keyboard so
+I did a few changes.
 
 Accelerators change on this branch:
 
@@ -30,3 +30,8 @@ Accelerators change on this branch:
   - Ctrl-5 - Orange
 
 I also find very handy to set `Region select` to pen button 2 in the menus.
+
+To build the package for archlinux:
+- clone this repo
+- Build with: makepkg --noextract -f
+- Install with: sudo pacman -U xournal-0.4.8.2016-1-x86_64.pkg.tar.xz
