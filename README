@@ -5,3 +5,28 @@ User's manual: see html-doc/manual.html
 Updates:       see http://xournal.sourceforge.net/
 
 See also: http://sourceforge.net/projects/xournal
+
+# Change on this branch
+
+I find accelerators to be very hard to use/reach on the keyboard so I did a few
+changes.
+
+Accelerators change on this branch:
+
+- Tools
+  - Esc - Hand
+  - F1 - Pencil
+  - F2 - Ruler
+  - F3 - Select rectangle
+  - F4 - Vertical space
+  - F5 - Zoom out
+  - F6 - Zoom in
+  - F7 - Highlighter
+- Colors
+  - Ctrl-1 - Black
+  - Ctrl-2 - Blue
+  - Ctrl-3 - Red
+  - Ctrl-4 - Green
+  - Ctrl-5 - Orange
+
+I also find very handy to set `Region select` to pen button 2 in the menus.

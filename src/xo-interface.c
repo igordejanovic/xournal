@@ -581,14 +581,14 @@ create_winMain (void)
   gtk_widget_show (viewZoomIn);
   gtk_container_add (GTK_CONTAINER (menuViewZoom_menu), viewZoomIn);
   gtk_widget_add_accelerator (viewZoomIn, "activate", accel_group,
-                              GDK_plus, (GdkModifierType) GDK_CONTROL_MASK,
+                              GDK_F6, (GdkModifierType) 0,
                               GTK_ACCEL_VISIBLE);
 
   viewZoomOut = gtk_image_menu_item_new_from_stock ("gtk-zoom-out", accel_group);
   gtk_widget_show (viewZoomOut);
   gtk_container_add (GTK_CONTAINER (menuViewZoom_menu), viewZoomOut);
   gtk_widget_add_accelerator (viewZoomOut, "activate", accel_group,
-                              GDK_minus, (GdkModifierType) GDK_CONTROL_MASK,
+                              GDK_F5, (GdkModifierType) 0,
                               GTK_ACCEL_VISIBLE);
 
   viewNormalSize = gtk_image_menu_item_new_from_stock ("gtk-zoom-100", accel_group);
@@ -870,7 +870,7 @@ create_winMain (void)
   gtk_widget_show (toolsPen);
   gtk_container_add (GTK_CONTAINER (menuTools_menu), toolsPen);
   gtk_widget_add_accelerator (toolsPen, "activate", accel_group,
-                              GDK_P, (GdkModifierType) GDK_CONTROL_MASK | GDK_SHIFT_MASK,
+                              GDK_F1, (GdkModifierType) 0,
                               GTK_ACCEL_VISIBLE);
   gtk_check_menu_item_set_active (GTK_CHECK_MENU_ITEM (toolsPen), TRUE);
 
@@ -888,7 +888,7 @@ create_winMain (void)
   gtk_widget_show (toolsHighlighter);
   gtk_container_add (GTK_CONTAINER (menuTools_menu), toolsHighlighter);
   gtk_widget_add_accelerator (toolsHighlighter, "activate", accel_group,
-                              GDK_H, (GdkModifierType) GDK_CONTROL_MASK | GDK_SHIFT_MASK,
+                              GDK_F7, (GdkModifierType) 0,
                               GTK_ACCEL_VISIBLE);
   gtk_check_menu_item_set_active (GTK_CHECK_MENU_ITEM (toolsHighlighter), TRUE);
 
@@ -926,7 +926,7 @@ create_winMain (void)
   gtk_widget_show (toolsRuler);
   gtk_container_add (GTK_CONTAINER (menuTools_menu), toolsRuler);
   gtk_widget_add_accelerator (toolsRuler, "activate", accel_group,
-                              GDK_L, (GdkModifierType) GDK_CONTROL_MASK | GDK_SHIFT_MASK,
+                              GDK_F2, (GdkModifierType) 0,
                               GTK_ACCEL_VISIBLE);
 
   separator9 = gtk_separator_menu_item_new ();
@@ -948,7 +948,7 @@ create_winMain (void)
   gtk_widget_show (toolsSelectRectangle);
   gtk_container_add (GTK_CONTAINER (menuTools_menu), toolsSelectRectangle);
   gtk_widget_add_accelerator (toolsSelectRectangle, "activate", accel_group,
-                              GDK_R, (GdkModifierType) GDK_CONTROL_MASK | GDK_SHIFT_MASK,
+                              GDK_F3, (GdkModifierType) 0,
                               GTK_ACCEL_VISIBLE);
   gtk_check_menu_item_set_active (GTK_CHECK_MENU_ITEM (toolsSelectRectangle), TRUE);
 
@@ -957,7 +957,7 @@ create_winMain (void)
   gtk_widget_show (toolsVerticalSpace);
   gtk_container_add (GTK_CONTAINER (menuTools_menu), toolsVerticalSpace);
   gtk_widget_add_accelerator (toolsVerticalSpace, "activate", accel_group,
-                              GDK_V, (GdkModifierType) GDK_CONTROL_MASK | GDK_SHIFT_MASK,
+                              GDK_F4, (GdkModifierType) 0,
                               GTK_ACCEL_VISIBLE);
   gtk_check_menu_item_set_active (GTK_CHECK_MENU_ITEM (toolsVerticalSpace), TRUE);
 
@@ -966,7 +966,7 @@ create_winMain (void)
   gtk_widget_show (toolsHand);
   gtk_container_add (GTK_CONTAINER (menuTools_menu), toolsHand);
   gtk_widget_add_accelerator (toolsHand, "activate", accel_group,
-                              GDK_A, (GdkModifierType) GDK_CONTROL_MASK | GDK_SHIFT_MASK,
+                              GDK_Escape, (GdkModifierType) 0,
                               GTK_ACCEL_VISIBLE);
 
   separator16 = gtk_separator_menu_item_new ();
@@ -990,24 +990,36 @@ create_winMain (void)
   gtk_widget_show (colorBlack);
   gtk_container_add (GTK_CONTAINER (toolsColor_menu), colorBlack);
   gtk_check_menu_item_set_active (GTK_CHECK_MENU_ITEM (colorBlack), TRUE);
+  gtk_widget_add_accelerator (colorBlack, "activate", accel_group,
+                              GDK_1, (GdkModifierType) GDK_CONTROL_MASK,
+                              GTK_ACCEL_VISIBLE);
 
   colorBlue = gtk_radio_menu_item_new_with_mnemonic (colorBlack_group, _("_blue"));
   colorBlack_group = gtk_radio_menu_item_get_group (GTK_RADIO_MENU_ITEM (colorBlue));
   gtk_widget_show (colorBlue);
   gtk_container_add (GTK_CONTAINER (toolsColor_menu), colorBlue);
   gtk_check_menu_item_set_active (GTK_CHECK_MENU_ITEM (colorBlue), TRUE);
+  gtk_widget_add_accelerator (colorBlue, "activate", accel_group,
+                              GDK_2, (GdkModifierType) GDK_CONTROL_MASK,
+                              GTK_ACCEL_VISIBLE);
 
   colorRed = gtk_radio_menu_item_new_with_mnemonic (colorBlack_group, _("_red"));
   colorBlack_group = gtk_radio_menu_item_get_group (GTK_RADIO_MENU_ITEM (colorRed));
   gtk_widget_show (colorRed);
   gtk_container_add (GTK_CONTAINER (toolsColor_menu), colorRed);
   gtk_check_menu_item_set_active (GTK_CHECK_MENU_ITEM (colorRed), TRUE);
+  gtk_widget_add_accelerator (colorRed, "activate", accel_group,
+                              GDK_3, (GdkModifierType) GDK_CONTROL_MASK,
+                              GTK_ACCEL_VISIBLE);
 
   colorGreen = gtk_radio_menu_item_new_with_mnemonic (colorBlack_group, _("_green"));
   colorBlack_group = gtk_radio_menu_item_get_group (GTK_RADIO_MENU_ITEM (colorGreen));
   gtk_widget_show (colorGreen);
   gtk_container_add (GTK_CONTAINER (toolsColor_menu), colorGreen);
   gtk_check_menu_item_set_active (GTK_CHECK_MENU_ITEM (colorGreen), TRUE);
+  gtk_widget_add_accelerator (colorGreen, "activate", accel_group,
+                              GDK_4, (GdkModifierType) GDK_CONTROL_MASK,
+                              GTK_ACCEL_VISIBLE);
 
   colorGray = gtk_radio_menu_item_new_with_mnemonic (colorBlack_group, _("gr_ay"));
   colorBlack_group = gtk_radio_menu_item_get_group (GTK_RADIO_MENU_ITEM (colorGray));
@@ -1043,6 +1055,9 @@ create_winMain (void)
   gtk_widget_show (colorOrange);
   gtk_container_add (GTK_CONTAINER (toolsColor_menu), colorOrange);
   gtk_check_menu_item_set_active (GTK_CHECK_MENU_ITEM (colorOrange), TRUE);
+  gtk_widget_add_accelerator (colorOrange, "activate", accel_group,
+                              GDK_5, (GdkModifierType) GDK_CONTROL_MASK,
+                              GTK_ACCEL_VISIBLE);
 
   colorYellow = gtk_radio_menu_item_new_with_mnemonic (colorBlack_group, _("_yellow"));
   colorBlack_group = gtk_radio_menu_item_get_group (GTK_RADIO_MENU_ITEM (colorYellow));
