@@ -888,7 +888,7 @@ create_winMain (void)
   gtk_widget_show (toolsHighlighter);
   gtk_container_add (GTK_CONTAINER (menuTools_menu), toolsHighlighter);
   gtk_widget_add_accelerator (toolsHighlighter, "activate", accel_group,
-                              GDK_F7, (GdkModifierType) 0,
+                              GDK_F2, (GdkModifierType) 0,
                               GTK_ACCEL_VISIBLE);
   gtk_check_menu_item_set_active (GTK_CHECK_MENU_ITEM (toolsHighlighter), TRUE);
 
@@ -926,7 +926,7 @@ create_winMain (void)
   gtk_widget_show (toolsRuler);
   gtk_container_add (GTK_CONTAINER (menuTools_menu), toolsRuler);
   gtk_widget_add_accelerator (toolsRuler, "activate", accel_group,
-                              GDK_F2, (GdkModifierType) 0,
+                              GDK_F3, (GdkModifierType) 0,
                               GTK_ACCEL_VISIBLE);
 
   separator9 = gtk_separator_menu_item_new ();
@@ -948,7 +948,7 @@ create_winMain (void)
   gtk_widget_show (toolsSelectRectangle);
   gtk_container_add (GTK_CONTAINER (menuTools_menu), toolsSelectRectangle);
   gtk_widget_add_accelerator (toolsSelectRectangle, "activate", accel_group,
-                              GDK_F3, (GdkModifierType) 0,
+                              GDK_F7, (GdkModifierType) 0,
                               GTK_ACCEL_VISIBLE);
   gtk_check_menu_item_set_active (GTK_CHECK_MENU_ITEM (toolsSelectRectangle), TRUE);
 

@@ -16,12 +16,12 @@ Accelerators change on this branch:
 - Tools
   - Esc - Hand
   - F1 - Pencil
-  - F2 - Ruler
-  - F3 - Select rectangle
+  - F2 - Highlighter
+  - F3 - Ruler
   - F4 - Vertical space
   - F5 - Zoom out
   - F6 - Zoom in
-  - F7 - Highlighter
+  - F7 - Select rectangle
 - Colors
   - Ctrl-1 - Black
   - Ctrl-2 - Blue
